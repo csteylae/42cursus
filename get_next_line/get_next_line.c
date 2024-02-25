@@ -109,25 +109,27 @@ char	*get_next_line(int fd)
 		return (ft_memfree(line));
 	return (line);
 }
-//
-//#include <fcntl.h>
-//#include <stdio.h>
-//int main(int argc, char **argv)
-//{
-////   int fd = open("one_line_no_nl.txt", O_RDONLY);
+
+
+/*
+#include <fcntl.h>
+#include <stdio.h>
+int main(int argc, char **argv)
+{
+   int fd = open("1char.txt", O_RDONLY);
 //    int fd = open("file3.txt", O_RDONLY);
-//    (void)argc;
-//    (void)argv;
-//     char *str = NULL;
-//   str = get_next_line(fd);
-//   printf("%s", str);
-//   free(str);
-//   while(str)
-//   {
-//       str = get_next_line(fd);
-//       printf("%s", str);
-//       free(str);
-//   }
-//   return(0);
-//}
-//  
+    (void)argc;
+    (void)argv;
+     char *str = NULL;
+     str = get_next_line(fd);
+   printf("%s", str);
+   free(str);
+   while(str)
+   {
+       str = get_next_line(fd);
+       printf("%s", str);
+       free(str);
+   }
+   return(0);
+}
+  */
