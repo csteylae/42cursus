@@ -6,13 +6,13 @@
 #    By: csteylae <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 13:24:45 by csteylae          #+#    #+#              #
-#    Updated: 2023/12/06 16:08:17 by csteylae         ###   ########.fr        #
+#    Updated: 2024/03/01 17:46:32 by csteylae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libft.a
 CC= gcc
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -g
 
 SRCS= ft_isalpha.c \
 	  ft_isdigit.c \

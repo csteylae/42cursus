@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   parse_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 17:01:21 by csteylae          #+#    #+#             */
-/*   Updated: 2023/12/07 12:25:43 by csteylae         ###   ########.fr       */
+/*   Created: 2024/03/01 13:10:25 by csteylae          #+#    #+#             */
+/*   Updated: 2024/03/04 13:21:41 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-t_list	*ft_lstnew(int	content)
+char	**ft_split_argv(char *argv, char c)
 {
-	t_list	*new_elem;
+	char	**dst;
 
-	new_elem = (t_list *)malloc(sizeof(t_list));
-	if (!new_elem)
+	dst = ft_split(argv, c);
+	if (!dst)
 		return (NULL);
-	new_elem->content = content;
-	new_elem->next = NULL;
-	return (new_elem);
+	return (dst);
+}
+
+char	**ft_check_which_input(int *argc, char **argv)
+{
+	if (*argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+		if (!argv)
+			return (NULL);
+		*argc = -1;
+	}
+	else
+		argv++;
+	return (argv);
+}
+
+void	ft_check_for_leak(char ***argv, int *argc)
+{
+	if (*argc == -1)
+		ft_free_the_split(*argv);
 }

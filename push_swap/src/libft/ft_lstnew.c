@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_functions_2.c                                :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 15:31:00 by csteylae          #+#    #+#             */
-/*   Updated: 2024/02/17 15:42:00 by csteylae         ###   ########.fr       */
+/*   Created: 2023/04/26 17:01:21 by csteylae          #+#    #+#             */
+/*   Updated: 2024/02/29 19:19:17 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_update_stack_index(t_stack **tail)
+t_list	*ft_lstnew(int content)
 {
-	t_stack	*tmp;
+	t_list	*new_elem;
 
-	tmp = (*tail)->next;
-	tmp->index = 0;
-	tmp = tmp->next;
-	while (tmp != *tail)
-	{
-		tmp->index = tmp->index + 1;
-		tmp = tmp->next;
-	}
-	(*tail)->index = tmp->index + 1;
-	return;
+	new_elem = (t_list *)malloc(sizeof(t_list));
+	if (!new_elem)
+		return (NULL);
+	new_elem->content = content;
+	new_elem->next = NULL;
+	return (new_elem);
 }

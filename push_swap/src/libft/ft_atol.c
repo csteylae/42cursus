@@ -6,7 +6,7 @@
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:19:52 by csteylae          #+#    #+#             */
-/*   Updated: 2023/12/06 13:21:28 by csteylae         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:48:19 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,6 @@ long	ft_atol(const char *str)
 	while (str[i] != '\0' && ft_isdigit(str[i]) == 1)
 	{
 		nb = nb * 10 + (str[i] - 48);
-		if (nb < 0 && minus == 1)
-			return (0);
-		if (minus == 0 && i >= 19)
-			return (-1);
 		i++;
 	}
 	if (minus == 1)
