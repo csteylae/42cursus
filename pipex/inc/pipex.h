@@ -6,7 +6,7 @@
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:08:11 by csteylae          #+#    #+#             */
-/*   Updated: 2024/04/08 14:46:41 by csteylae         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:10:59 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,30 @@ typedef	struct s_pipex
 	char	**envp;
 	int		fd_in;
 	int		fd_out;
+	int		len;
 }	t_pipex;
 
 /****************  Functions  **************/
+
+//file init.c
+
+void	ft_init_pipex(t_pipex **pipex, char *argv, char **envp);
+void	ft_open_files(t_pipex **pipex, char **argv, int argc);
+
 // file utils.c
 void	ft_memfree(char **array_ptr);
 void	*ft_puterror(char *argv, char *msg, t_pipex **elem);
 int		ft_is_equal(char *s1, char *s2);
 void	ft_print_struct(t_pipex *elem);
 
-// file init.c.c
+// file parse_arg.c
+void	ft_verify_envp(char **envp);
 char	**ft_parse_envp(char **envp);
 char	**ft_get_path(char *argv, char **envp);
 char	**ft_get_cmd(char *argv);
 void	ft_find_path(char **path, char **cmd, char **envp);
 
-//file refactorizing parse_cmd.
+//file pipex.c
 void	*ft_pipex(int argc, char **argv, char **envp);
 
 #endif

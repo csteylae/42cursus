@@ -4,7 +4,8 @@ CFLAGS= -Wall -Wextra -Werror -g -fsanitize=address
 
 SRCS= src/utils.c \
 	  src/init.c \
-	  src/refactorizing_parse_cmd.c 
+	  src/parse_arg.c \
+	  src/pipex.c 
 		
 OBJS= $(SRCS:.c=.o)
 
