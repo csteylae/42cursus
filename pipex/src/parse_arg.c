@@ -6,7 +6,7 @@
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:31:56 by csteylae          #+#    #+#             */
-/*   Updated: 2024/04/10 14:58:45 by csteylae         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:45:06 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_verify_envp(char **envp)
 	int	i;
 
 	i = 0;
+	if (!envp)
+		ft_puterror(NULL, "environ not found\n", NULL);
 	while (envp[i] && !ft_is_equal(PATH, envp[i]))
 		i++;
 	if (!envp[i] || !ft_strlen(envp[i]))

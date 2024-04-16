@@ -13,7 +13,7 @@ void	ft_memfree(char **array_ptr)
 		index--;
 	}
 	free(array_ptr);
-	array_ptr= NULL;
+	array_ptr = NULL;
 }
 
 void	*ft_puterror(char *argv, char *msg, t_pipex **ptr)
@@ -21,13 +21,12 @@ void	*ft_puterror(char *argv, char *msg, t_pipex **ptr)
 	if (argv)
 		ft_printf("%s :", argv);
 	ft_putstr_fd(msg, STDERR_FILENO);
-	if (!ptr || !*ptr)
-		return (NULL);
-	if ((*ptr)->path)
+	if (ptr && *ptr && (*ptr)->path)
 		ft_memfree((*ptr)->path);
-	if ((*ptr)->cmd)
+	if (ptr && *ptr && (*ptr)->cmd)
 		ft_memfree((*ptr)->cmd);
-	free(*ptr);
+	if (ptr && *ptr)
+		free(*ptr);
 	exit(EXIT_FAILURE);
 	return (NULL);
 }
