@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 18:39:37 by csteylae          #+#    #+#             */
-/*   Updated: 2024/04/19 11:48:04 by csteylae         ###   ########.fr       */
+/*   Created: 2024/04/19 12:55:13 by csteylae          #+#    #+#             */
+/*   Updated: 2024/04/22 15:42:00 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	int	i;
+#include "../inc/pipex.h"
 
-	i = 0;
-	while (s[i] != (char)c && s[i] != '\0')
-		i++;
-	if ((char)c == s[i])
-	{
-		s = s + i;
-		return ((char *)s);
-	}
-	else
-		return (0);
+int	main(int argc, char **argv, char **envp)
+{
+	if (argc != 5)
+		return (1);
+	ft_pipeline(argc, argv, envp);
 }

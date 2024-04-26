@@ -1,11 +1,12 @@
 NAME= pipex
-CC= gcc
-CFLAGS= -Wall -Wextra -Werror -g -fsanitize=address
+CC= cc
+CFLAGS= -Wall -Wextra -Werror -g
 
 SRCS= src/utils.c \
 	  src/init.c \
 	  src/parse_arg.c \
-	  src/pipex.c 
+	  src/pipex.c \
+	  src/main.c
 		
 OBJS= $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:38:14 by csteylae          #+#    #+#             */
-/*   Updated: 2024/03/29 12:12:49 by csteylae         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:49:02 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*ft_strcpy_cat(char *dst, char *src, char *src2)
 	return (dst);
 }
 
-static char *ft_free_str(char *s1, char *s2, char flag)
+static char	*ft_free_str(char *s1, char *s2, char flag)
 {
 	if (flag == '1')
 		free(s1);

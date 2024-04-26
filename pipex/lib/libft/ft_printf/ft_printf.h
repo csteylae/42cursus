@@ -6,7 +6,7 @@
 /*   By: csteylae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:23:45 by csteylae          #+#    #+#             */
-/*   Updated: 2023/10/17 19:41:36 by csteylae         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:52:39 by csteylae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ typedef struct ft_printf_data
 {
 	int	current;
 	int	old;
-}	t_ft_printf_data; 
+}	t_ft_printf_data;
 
 #endif
